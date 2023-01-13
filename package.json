@@ -1,0 +1,61 @@
+{
+  "name": "pfeifer-x12",
+  "displayName": "X12",
+  "description": "Provides very basic syntax highlighting for x12",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Jacob Pfeifer",
+  "publisher": "JacobPfeifer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfeiferj/vscode-x12"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "programming languages"
+  ],
+  "activationEvents": [
+    "onLanguage:x12"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "x12",
+        "extensions": [
+          ".x12"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "@types/lodash-es": "^4.17.6",
+    "ansi-to-html": "^0.7.2",
+    "lodash": "^4.17.21",
+    "web-tree-sitter": "^0.20.7"
+  }
+}
